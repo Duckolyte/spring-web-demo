@@ -1,0 +1,20 @@
+spring:
+    datasource:
+#      driver-class-name: org.h2.Driver
+#      url: jdbc:h2:mem:db
+#      username: sa
+#      password: sa
+      url: ${POC_DATASOURCE_URL}
+      driver-class-name: ${POC_DATASOURCE_DRIVER}
+      username: ${POC_TCU_USER}
+      password: ${POC_TCU_PW}
+    sql:
+      init:
+        mode: never
+    jpa:
+#      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+        ddl-auto: update
+      generate-ddl: true
+    h2:
+      console.enabled: true
