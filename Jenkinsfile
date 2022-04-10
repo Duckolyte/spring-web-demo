@@ -1,9 +1,22 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'maven:3.8.1-adoptopenjdk-11' }
+    }
     stages {
-        stage('Stage 1') {
+        stage('Build') {
             steps {
-                echo 'Hello world!'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh 'mvn --version'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
