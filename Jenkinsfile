@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'openjdk:11-jdk-slim' }
+        docker { image '3.8.5-openjdk-17-slim' }
     }
     stages {
         stage('Build') {
