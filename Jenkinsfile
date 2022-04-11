@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Initialize') {
-            def dockerHome = tool 'myDocker'
+            def dockerHome = tool 'ci-docker'
             env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
         stage('Build') {
