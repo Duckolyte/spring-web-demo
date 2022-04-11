@@ -5,6 +5,8 @@ pipeline {
             agent {
                 docker {
                     image '3.8.5-openjdk-17'
+                    args '-v $HOME/.m2:/root/.m2'
+                    reuseNode true
                 }
             }
             steps {
